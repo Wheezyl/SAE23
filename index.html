@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Weather V2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Basculer le mode sombre">
+                🌓 Mode
+            </button>
+            <h1>Instant Weather V2</h1>
+            <p>Prévisions météorologiques précises et détaillées</p>
+        </header>
+
+        <main>
+            <form class="search-form" id="weatherForm">
+                <div class="form-group">
+                    <label for="cityInput">Ville ou Code Postal :</label>
+                    <input type="text" id="cityInput" name="city" required 
+                           placeholder="Ex: Paris, Lyon, 75001..." 
+                           aria-describedby="cityHelp">
+                    <div id="cityHelp" class="sr-only">
+                        Saisissez le nom d'une ville française ou un code postal
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="daysSlider">Nombre de jours de prévision :</label>
+                    <div class="days-selector">
+                        <div class="days-slider">
+                            <input type="range" id="daysSlider" class="slider" 
+                                   min="1" max="7" value="3" 
+                                   aria-describedby="daysDisplay">
+                        </div>
+                        <div class="days-display" id="daysDisplay">3 jours</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Informations supplémentaires :</label>
+                    <div class="options-grid">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="latitude" name="options" value="latitude">
+                            <label for="latitude">Latitude de la commune</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="longitude" name="options" value="longitude">
+                            <label for="longitude">Longitude de la commune</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="rain" name="options" value="rain">
+                            <label for="rain">Cumul de pluie (mm)</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="wind" name="options" value="wind">
+                            <label for="wind">Vent moyen (km/h)</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="windDirection" name="options" value="windDirection">
+                            <label for="windDirection">Direction du vent (°)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="search-btn" id="searchBtn">
+                    🔍 Rechercher la météo
+                </button>
+            </form>
+
+            <div id="results" class="results-container" role="region" aria-live="polite">
+                <!-- Les résultats météo s'afficheront ici -->
+            </div>
+
+            <!-- Section de comparaison de villes -->
+            <section class="comparison-section" id="comparisonSection" style="display: none;">
+                <h2>Comparateur de villes</h2>
+                <div class="comparison-controls">
+                    <input type="text" id="city1Input" placeholder="Première ville">
+                    <input type="text" id="city2Input" placeholder="Deuxième ville">
+                    <button type="button" class="compare-btn" onclick="compareCities()">
+                        📊 Comparer
+                    </button>
+                </div>
+                <div id="comparisonResults" class="comparison-results">
+                    <!-- Résultats de comparaison -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
