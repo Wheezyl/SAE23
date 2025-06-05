@@ -391,3 +391,170 @@ body {
     color: var(--text-color);
 }
 
+/* Messages d'erreur */
+.error-message {
+    background: var(--danger-color);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.spinner {
+    border: 3px solid rgba(74,144,226,0.3);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Comparateur de villes */
+.comparison-section {
+    margin-top: 2rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .comparison-section {
+    background: rgba(44,44,44,0.95);
+}
+
+.comparison-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.comparison-controls input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+.compare-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.compare-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.comparison-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .search-form {
+        padding: 1.5rem;
+    }
+
+    .days-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .weather-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-toggle {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .comparison-controls {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .weather-card {
+        padding: 1rem;
+    }
+
+    .temperature {
+        font-size: 2rem;
+    }
+
+    .additional-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations d'entrée */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Accessibilité */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles pour l'accessibilité */
+button:focus,
+input:focus,
+.checkbox-group:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
