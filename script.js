@@ -193,7 +193,7 @@ function displayWeatherResults(cityData, forecasts, options) {
     });
     console.log('=====================');
     
-    // Correction des champs de ville avec plusieurs alternatives
+
     const cityName = cityData.name || cityData.nom || cityData.city || cityData.commune || 'Ville inconnue';
     const postalCode = cityData.postal_code || cityData.cp || cityData.code_postal || cityData.postcode || '';
     const departmentName = cityData.department_name || cityData.departement || cityData.dept_name || cityData.department || 'Département inconnu';
