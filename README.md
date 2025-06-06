@@ -42,8 +42,11 @@ Clique sur le bouton 🌓 Mode en haut à droite pour basculer entre les thèmes
 🧑‍💻 Technologies utilisées
 
 HTML5 : Structure sémantique et accessible.
+
 CSS3 : Design moderne avec variables CSS, animations, et responsive design (utilise la police Poppins via Google Fonts).
+
 JavaScript (ES6) : Gestion des interactions, appels API, et affichage dynamique.
+
 API MeteoConcept : Fournit des données météo précises pour la France.
 
 
